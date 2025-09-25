@@ -8,12 +8,19 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="h-screen flex flex-col justify-center items-center text-center bg-lightGreen px-6"
+        className="flex flex-col justify-center items-center text-center bg-cover bg-center px-6 "
+        style={{
+          backgroundImage: "url('../assest/image/bg.png')",
+          height: "100vh",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 1,
+        }}
       >
         <h1 className="text-5xl md:text-6xl font-montserrat font-bold text-primaryGreen mb-4">
           Fresh Microgreens Delivered
         </h1>
-        <p className="text-lg md:text-xl font-lato max-w-2xl mb-6">
+        <p className="text-lg md:text-xl font-lato max-w-2xl mb-6 text-gray-300">
           Organic, healthy, and home-friendly microgreens grown with care.
         </p>
         <div className="flex gap-4">
@@ -33,31 +40,65 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 text-textDark text-center">
-        <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-12">
-          Our Services
-        </h2>
-        <div className="flex flex-col md:flex-row justify-center gap-8 px-4 md:px-0">
-          <div className="p-6 bg-white shadow-md rounded-lg flex-1">
-            <h3 className="font-montserrat font-bold mb-2">Home Delivery</h3>
-            <p className="font-lato text-sm">
-              Fresh microgreens delivered straight to your doorstep.
-            </p>
-          </div>
-          <div className="p-6 bg-white shadow-md rounded-lg flex-1">
-            <h3 className="font-montserrat font-bold mb-2">Workshops</h3>
-            <p className="font-lato text-sm">
-              Learn how to grow microgreens at home easily.
-            </p>
-          </div>
-          <div className="p-6 bg-white shadow-md rounded-lg flex-1">
-            <h3 className="font-montserrat font-bold mb-2">Café Tie-Ups</h3>
-            <p className="font-lato text-sm">
-              Supplying fresh microgreens to cafes and restaurants.
-            </p>
-          </div>
-        </div>
-      </section>
+<section className="py-20 bg-gradient-to-b from-green-50 to-white text-center">
+  <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-12 text-gray-800">
+    Our Services
+  </h2>
+  <div className="flex flex-col md:flex-row justify-center gap-8 px-4 md:px-0">
+
+    {/* Home Delivery */}
+    <div
+      onClick={() => navigate("/services/home-delivery")}
+      className="cursor-pointer p-6 bg-white shadow-lg rounded-xl flex-1 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2"
+    >
+      <img
+        src="/assets/images/home-delivery.png"
+        alt="Home Delivery"
+        className="h-24 w-24 mx-auto mb-4 object-contain"
+      />
+      <h3 className="font-montserrat font-bold text-lg mb-2">Home Delivery</h3>
+      <p className="font-lato text-sm text-gray-600">
+        Fresh microgreens delivered straight to your doorstep.
+      </p>
+    </div>
+
+    {/* Workshops */}
+    <div
+      onClick={() => navigate("/services/workshops")}
+      className="cursor-pointer p-6 bg-white shadow-lg rounded-xl flex-1 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2"
+    >
+      <img
+        src="/assets/images/workshops.png"
+        alt="Workshops"
+        className="h-24 w-24 mx-auto mb-4 object-contain"
+      />
+      <h3 className="font-montserrat font-bold text-lg mb-2">Workshops</h3>
+      <p className="font-lato text-sm text-gray-600">
+        Learn how to grow microgreens at home easily.
+      </p>
+    </div>
+
+    {/* Café Tie-Ups */}
+    <div
+      onClick={() => navigate("/services/cafe-tieups")}
+      className="cursor-pointer p-6 bg-white shadow-lg rounded-xl flex-1 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2"
+    >
+      <img
+        src="/assets/images/cafe-tieups.png"
+        alt="Café Tie-Ups"
+        className="h-24 w-24 mx-auto mb-4 object-contain"
+      />
+      <h3 className="font-montserrat font-bold text-lg mb-2">Café Tie-Ups</h3>
+      <p className="font-lato text-sm text-gray-600">
+        Supplying fresh microgreens to cafes and restaurants.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
 
       {/* Product Preview */}
       <section className="py-20 bg-lightGreen text-textDark text-center">
@@ -72,7 +113,9 @@ export default function Home() {
               className="w-full h-48 object-cover mb-4 rounded"
             />
             <h3 className="font-montserrat font-bold mb-2">Broccoli</h3>
-            <p className="font-lato text-sm">Rich in vitamins and easy to grow.</p>
+            <p className="font-lato text-sm">
+              Rich in vitamins and easy to grow.
+            </p>
           </div>
           <div className="p-6 bg-white shadow-md rounded-lg flex-1">
             <img
@@ -90,7 +133,9 @@ export default function Home() {
               className="w-full h-48 object-cover mb-4 rounded"
             />
             <h3 className="font-montserrat font-bold mb-2">Radish</h3>
-            <p className="font-lato text-sm">Adds spice and nutrition to meals.</p>
+            <p className="font-lato text-sm">
+              Adds spice and nutrition to meals.
+            </p>
           </div>
         </div>
         <button
