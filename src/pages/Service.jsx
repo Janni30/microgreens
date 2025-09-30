@@ -87,7 +87,7 @@ const OurServicesPage = () => {
         <div className="relative md:w-1/2 mb-8 md:mb-0">
           <img
             src="/assest/image/mom-daugther-gardending-together.jpg"
-            alt="API Prototyping"
+            alt="alt"
             className="rounded-xl w-full shadow-lg h-[520px] object-cover"
             height={400}
             width={300}
