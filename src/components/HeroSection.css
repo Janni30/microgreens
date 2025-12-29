@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Main Container */
+.hero-container {
+  display: flex;
+  height: 90vh; /* Takes up most of the screen height */
+  width: 100%;
+  background-color: #f9fdf9; /* Very light mint/white background */
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Prevents scrollbars if image is too big */
+}
+
+/* --- Left Side: Image --- */
+.hero-image-wrapper {
+  flex: 1; /* Takes 50% width */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without stretching */
+  border-radius: 30px 100px 30px 100px; /* unique organic shape */
+  box-shadow: 20px 20px 60px rgba(26, 60, 30, 0.15); /* Soft shadow for depth */
+}
+
+/* --- Right Side: Content --- */
+.hero-content {
+  flex: 1; /* Takes 50% width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically */
+  padding: 0 8% 0 4%; /* Right padding larger for balance */
+}
+
+.content-box {
+  max-width: 600px; /* Keeps text from getting too wide on huge screens */
+}
+
+/* Typography */
+.welcome-tag {
+  display: inline-block;
+  background-color: #e3f0da;
+  color: #4a8b38;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.main-heading {
+  font-size: 4rem; /* Big, bold title */
+  line-height: 1.1;
+  color: #1a3c1e; /* Dark green */
+  margin: 0 0 25px 0;
+  font-weight: 700;
+}
+
+.highlight-text {
+  color: #4a8b38; /* Accent green */
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline effect for the highlighted word */
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #eadd5b; /* Yellow accent */
+  opacity: 0.4;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.sub-heading {
+  font-size: 1.1rem;
+  color: #555; /* Soft grey text */
+  line-height: 1.7;
+  margin-bottom: 40px;
+  width: 90%;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  padding: 18px 45px;
+  background-color: #4a8b38; /* Green */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(74, 139, 56, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #3d752e;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  padding: 18px 45px;
+  background-color: transparent;
+  color: #1a3c1e;
+  border: 2px solid #1a3c1e; /* Dark border */
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #1a3c1e;
+  color: white;
+}
+
+/* Trust Badges (Little checkmarks) */
+.trust-badges {
+  display: flex;
+  gap: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.badge-check {
+  color: #4a8b38;
+  font-weight: 800;
+  background: #e3f0da;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 968px) {
+  .hero-container {
+    flex-direction: column; /* Stack vertically on mobile */
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    padding: 20px;
+    height: 400px;
+  }
+  
+  .hero-img {
+    border-radius: 20px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 20px 5%;
+    text-align: center;
+  }
+
+  .content-box {
+    margin: 0 auto;
+  }
+
+  .main-heading {
+    font-size: 2.8rem;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+
+  .trust-badges {
+    justify-content: center;
+  }
+}

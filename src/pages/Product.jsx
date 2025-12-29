@@ -9,7 +9,7 @@ const products = [
     price: 12.99,
     oldPrice: 15.99,
     image:
-      "https://images.unsplash.com/photo-1609501676725-7186f06ac4ac?w=400&h=400&fit=crop",
+      "https://www.shutterstock.com/image-photo/composition-assorted-organic-vegetables-fruits-260nw-1720876846.jpg",
     category: "Brassicaceae",
     sale: true,
     discount: 20,
@@ -48,7 +48,7 @@ const products = [
     price: 11.49,
     oldPrice: 13.59,
     image:
-      "https://images.unsplash.com/photo-1496395031282-8dcee4d48630?w=400&h=400&fit=crop",
+      "https://gardeningsg.nparks.gov.sg/images/Plants/ThaiBasil_JacChua%20(1).jpg",
     category: "Lamiaceae",
     sale: true,
     discount: 15,

@@ -6,8 +6,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: "",
+   
   });
   const [status, setStatus] = useState("");
 
@@ -19,9 +18,9 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:9001/users", formData);
+      await axios.post("http://localhost:9001/users", formData,);
       setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: ""});
     } catch (error) {
       console.error("❌ Error sending message:", error);
       setStatus("Failed to send message. Try again.");
@@ -72,14 +71,7 @@ export default function Contact() {
               placeholder="Subject"
               required
             /> */}
-            <textarea
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none h-32 resize-none"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              required
-            ></textarea>
+            
           </div>
           <button
             type="submit"
