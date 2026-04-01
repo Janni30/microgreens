@@ -1,0 +1,520 @@
+/* AboutUs.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 5%;
+  background-color: #f1f6f1; /* Light greenish-grey background */
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Important for the farmer image overlay */
+  position: relative;
+  gap: 40px;
+}
+
+.about-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+}
+
+/* --- Left Side: Circular Image Layout --- */
+.about-images {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+  /* Ensure images don't get too small */
+  min-width: 300px; 
+}
+
+.main-circle {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid #fff; /* White ring */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.inset-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid #fff;
+  position: absolute;
+  top: 40px;
+  left: -40px; /* Floats off to the left */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.delivery-badge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #eadd5b; /* Yellow */
+  width: 130px;
+  height: 130px;
+  border-radius: 50% 50% 0 50%; /* Speech bubble shape */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #2c3e2e;
+  line-height: 1.1;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.delivery-badge .icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* --- Center: Text Content --- */
+.about-content {
+  flex: 1.2;
+  position: relative;
+  z-index: 2; /* Keeps text above background elements */
+  padding-right: 180px; /* Space for the farmer image on the right */
+}
+
+/* Floating Award Box (Top Right relative to content) */
+.award-float-box {
+  background-color: #eadd5b;
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 250px;
+  position: absolute;
+  top: -40px;
+  right: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.award-icon {
+  font-size: 1.8rem;
+  color: #2c5c2e;
+}
+
+.award-float-box h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.award-float-box p {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: #444;
+}
+
+/* Headers & Text */
+.sub-header {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.leaf-icon {
+  color: #7ab745;
+}
+
+.about-content h2 {
+  font-size: 2.8rem;
+  color: #1a3c1e;
+  line-height: 1.2;
+  margin: 0 0 25px 0;
+}
+
+.highlight-green {
+  color: #4a8b38;
+}
+
+.text-block {
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Checkmarks List */
+.check-list {
+  margin-bottom: 30px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.check-icon {
+  color: #4a8b38;
+  font-weight: bold;
+}
+
+/* Progress Bars */
+.progress-container {
+  margin-bottom: 35px;
+}
+
+.progress-item {
+  margin-bottom: 15px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1a3c1e;
+}
+
+.progress-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #dcdcdc; /* Grey background */
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4a8b38; /* Green fill */
+  border-radius: 3px;
+}
+
+/* Button */
+.contact-btn {
+  background-color: #5c8c48;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-btn:hover {
+  background-color: #4a7538;
+}
+
+/* --- Far Right: Farmer Image --- */
+.farmer-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 450px; /* Adjust height based on your image */
+  z-index: 1;
+  pointer-events: none; /* Allows clicking items behind it if needed */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  /* Hide farmer on medium screens so text is readable */
+  .farmer-image {
+    display: none;
+  }
+  .about-content {
+    padding-right: 0;
+  }
+  .award-float-box {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-section {
+    flex-direction: column;
+    padding: 50px 20px;
+    gap: 60px;
+  }
+  
+  .about-images {
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inset-circle {
+    left: 0; /* Adjust inset circle for mobile */
+    width: 120px;
+    height: 120px;
+  }
+
+  .main-circle {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+}
+
+/* TestimonialSlider.css */
+
+.testimonial-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5%;
+  background-color: #f9fdf9; /* Light green background from other sections */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-container {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative Background Elements */
+
+
+.testimonial-bg-leaf {
+  position: absolute;
+  bottom: -50px;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  /* Replace with a leaf SVG background-image if you have one */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 C 20 0 0 20 0 50 C 0 80 20 100 50 100 C 80 100 100 80 100 50 C 100 20 80 0 50 0 Z' fill='none' stroke='%23eadd5b' stroke-width='2' /%3E");
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  transform: rotate(-30deg);
+}
+
+
+.testimonial-header {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.leaf-icon {
+  color: #7ab745;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Yellow Card */
+.testimonial-card {
+  background-color: #eadd5b; /* The yellow color from the image */
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Left Side: Irregular Image */
+.image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.testimonial-image {
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
+  /* This clip-path creates a similar irregular shape */
+  clip-path: polygon(10% 0, 95% 5%, 100% 90%, 85% 100%, 5% 95%, 0 10%);
+  border-radius: 20px;
+}
+
+/* Right Side: Content */
+.content-wrapper {
+  flex: 1.5;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a3c1e; /* Dark green */
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 3px solid #fff;
+}
+
+.author-title {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.author-name {
+  margin: 2px 0 0;
+  font-size: 1.1rem;
+  color: #1a3c1e;
+  font-weight: 700;
+}
+
+.quote-icon {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  font-size: 5rem;
+  color: #1a3c1e;
+  opacity: 0.2;
+  line-height: 1;
+}
+
+/* Navigation Buttons */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: 1px solid #eadd5b;
+  color: #1a3c1e;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: #eadd5b;
+  color: #fff;
+}
+
+.left-arrow {
+  left: -25px;
+}
+
+.right-arrow {
+  right: -25px;
+}
+
+/* Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.active-dot {
+    background-color: #4a8b38;
+    width: 12px;
+    height: 12px;
+}
+
+
+/* Responsive */
+@media (max-width: 968px) {
+  .testimonial-card {
+    flex-direction: column;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  
+  .image-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .testimonial-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .quote-text {
+    font-size: 1.2rem;
+  }
+  
+  .author-info {
+    justify-content: center;
+  }
+  
+  .quote-icon {
+    display: none; /* Hide on smaller screens */
+  }
+  
+  .arrow-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .left-arrow {
+    left: 10px;
+  }
+  
+  .right-arrow {
+    right: 10px;
+  }
+}

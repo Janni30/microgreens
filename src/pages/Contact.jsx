@@ -1,29 +1,26 @@
 import { useState } from "react";
 import axios from "axios";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+   
   });
   const [status, setStatus] = useState("");
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:9001/users", formData);
-      console.log("✅ Response:", res.data);
-
+      await axios.post("http://localhost:9001/users", formData,);
       setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // clear form
+      setFormData({ name: "", email: ""});
     } catch (error) {
       console.error("❌ Error sending message:", error);
       setStatus("Failed to send message. Try again.");
@@ -31,51 +28,96 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-beigeBg min-h-screen py-20 text-textDark text-center px-4 md:px-0">
-      <h2 className="text-3xl font-montserrat font-bold mb-4">Contact Us</h2>
-      <p className="font-lato mb-6">
-        Have questions or want to place an order? Reach out to us!
-      </p>
+    <div className="bg-gray-50 min-h-screen py-16 px-4">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h2 className="text-6xl font-bold text-green-600">Contact Us</h2>
+        <p className="text-gray-600 text-lg mt-2">We'd love to hear from you</p>
+      </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-xl mx-auto flex flex-col gap-4"
-      >
-        <input
-          className="p-3 rounded border"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Name"
-          required
-        />
-        <input
-          className="p-3 rounded border"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-        />
-        <textarea
-          className="p-3 rounded border"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Message"
-          required
-        ></textarea>
-        <button
-          type="submit"
-          className="bg-primaryGreen text-white px-6 py-3 rounded-lg font-lato hover:bg-green-600 transition-colors"
+      {/* Grid Layout */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+        {/* Left: Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-md rounded-lg p-6 border flex flex-col"
         >
-          Send Message
-        </button>
-      </form>
+          <h3 className="text-xl font-semibold mb-4">Send us a message</h3>
+          <div className="space-y-4 flex-1">
+            <input
+              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              required
+            />
+            <input
+              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              required
+            />
+            {/* <input
+              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Subject"
+              required
+            /> */}
+            
+          </div>
+          <button
+            type="submit"
+            className="mt-6 w-full bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 transition"
+          >
+            Send Message
+          </button>
+          {status && <p className="mt-4 text-center text-green-600">{status}</p>}
+        </form>
 
-      {status && <p className="mt-4 text-lg">{status}</p>}
+        {/* Right: Contact Info */}
+        <div className="flex flex-col justify-between h-full space-y-6">
+          <div className="flex items-start gap-4 bg-white border rounded-lg p-6 shadow-sm">
+            <div className="bg-green-100 p-3 rounded-full">
+              <Mail className="text-green-600 w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg">Email</h4>
+              <p className="text-gray-600">hello@greenlife.com</p>
+              <p className="text-gray-600">support@greenlife.com</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-white border rounded-lg p-6 shadow-sm">
+            <div className="bg-green-100 p-3 rounded-full">
+              <Phone className="text-green-600 w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg">Phone</h4>
+              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">Mon-Fri: 9AM - 6PM</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-white border rounded-lg p-6 shadow-sm">
+            <div className="bg-green-100 p-3 rounded-full">
+              <MapPin className="text-green-600 w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg">Location</h4>
+              <p className="text-gray-600">123 Green Street</p>
+              <p className="text-gray-600">Organic City, OC 12345</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

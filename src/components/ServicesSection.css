@@ -1,0 +1,135 @@
+/* ServicesSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Using the green theme colors established previously */
+  --primary-green-dark: #1a3c1e;
+  --accent-green: #4a8b38;
+  --icon-bg-light: #e3f0da; /* Very light green for icon circles */
+  --text-grey: #666;
+  --bg-off-white: #f9fdf9;
+}
+
+.services-section {
+  padding: 100px 10%;
+  background-color: var(--bg-off-white);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* --- Section Header --- */
+.services-header {
+  margin-bottom: 60px;
+}
+
+.sub-title {
+  color: var(--accent-green);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-green-dark);
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.header-desc {
+  color: var(--text-grey);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- The Grid Layout --- */
+.services-grid {
+  display: grid;
+  /* This creates the 4-column layout seen in the reference image */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* --- Card Styling --- */
+.service-card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px; /* Soft rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle initial shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover Effect - Lift up */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(74, 139, 56, 0.15); /* Slightly greener shadow on hover */
+}
+
+/* --- Icon Styling --- */
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: var(--icon-bg-light); /* Circular background color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+  transform: scale(1.1); /* Slight pulse on hover */
+}
+
+.icon-wrapper svg {
+  width: 40px;
+  height: 40px;
+  color: var(--accent-green); /* Icon color */
+}
+
+/* --- Card Text Styling --- */
+.service-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary-green-dark);
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: var(--text-grey);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  /* On medium screens, switch to 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 5%;
+  }
+
+  /* On mobile screens, switch to 1 column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header h2 {
+    font-size: 2rem;
+  }
+}

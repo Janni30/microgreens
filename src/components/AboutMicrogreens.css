@@ -1,0 +1,258 @@
+/* AboutMicrogreens.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-green: #1a3c1e;
+  --accent-green: #4a8b38;
+  --yellow-accent: #eadd5b;
+  --off-white-bg: #f1f6f1;
+  --text-grey: #555;
+}
+
+.about-mg-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 5%;
+  background-color: var(--off-white-bg);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden; /* Prevents overlay image causing scrollbars */
+  gap: 60px;
+}
+
+/* --- Left Side: Images --- */
+.about-mg-images {
+  flex: 1;
+  position: relative;
+  max-width: 550px;
+  /* Ensure it doesn't get too small */
+  min-width: 320px;
+}
+
+.image-circle-wrapper {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.main-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 12px solid #ffffff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.inset-circle-img {
+  position: absolute;
+  top: -30px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Yellow Freshness Badge */
+.fresh-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--yellow-accent);
+  padding: 15px 25px;
+  border-radius: 30px 0 30px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--primary-green);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+/* --- Right Side: Content --- */
+.about-mg-content {
+  flex: 1.3;
+  position: relative;
+  z-index: 2; /* Ensure text is above background elements */
+  padding-right: 150px; /* Make room for the farmer overlay */
+}
+
+/* Floating Award Box */
+.floating-award {
+  position: absolute;
+  top: -50px;
+  right: 50px;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.award-star {
+  font-size: 2rem;
+  color: var(--accent-green);
+}
+
+.award-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.award-text strong {
+  color: var(--primary-green);
+}
+
+.award-text span {
+  font-size: 0.8rem;
+  color: var(--text-grey);
+}
+
+/* Typography */
+.sub-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-mg-content h2 {
+  font-size: 2.8rem;
+  color: var(--primary-green);
+  line-height: 1.2;
+  margin: 0 0 30px 0;
+}
+
+.highlight-green {
+  color: var(--accent-green);
+}
+
+.mg-text {
+  color: var(--text-grey);
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* Checkmarks Grid */
+.mg-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.check-icon {
+  color: var(--accent-green);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.learn-more-btn {
+  padding: 15px 40px;
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(74, 139, 56, 0.25);
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: var(--primary-green);
+  transform: translateY(-3px);
+}
+
+/* --- Farmer Overlay Image --- */
+.farmer-overlay-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 450px; /* Adjust based on your image ratio */
+  opacity: 0.9;
+  pointer-events: none; /* Ensures it doesn't block clicks */
+  z-index: 1;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  .farmer-overlay-img {
+    display: none; /* Hide farmer on medium screens for clarity */
+  }
+  .about-mg-content {
+    padding-right: 0;
+  }
+  .floating-award {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 30px;
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-mg-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .about-mg-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .image-circle-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .inset-circle-img {
+    width: 130px;
+    height: 130px;
+    top: -20px;
+    left: -20px;
+  }
+  
+  .fresh-badge {
+    right: 0;
+  }
+
+  .about-mg-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .mg-checklist {
+      grid-template-columns: 1fr; /* Stack checkmarks on mobile */
+  }
+}
